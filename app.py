@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 import time
-import random
+from random import randint
 import sys
 from tkinter import *
 from tkinter import ttk
@@ -122,7 +122,8 @@ class Instalike():
         unique_photos = len(pic_hrefs)
         for pic_href in pic_hrefs:
             driver.get(pic_href)
-            time.sleep(15)
+            pause = randint(12, 20)
+            time.sleep(pause)
             driver.execute_script(
                 "window.scrollTo(0, document.body.scrollHeight);")
             try:
