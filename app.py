@@ -83,11 +83,11 @@ class Instalike():
         passworword_elem.send_keys(password)
         passworword_elem.send_keys(Keys.RETURN)
         time.sleep(2)
-        not_now_elem = driver.find_element_by_class_name(
-            "HoLwm"
-        )
-        not_now_elem.click()
-        time.sleep(2)
+        # Pop Up Confirm
+        # not_now_elem = driver.find_element_by_class_name(
+        #     "HoLwm"
+        # )
+        # not_now_elem.click()
 
         # Check if 1 hour is passed
         if datetime.datetime.now() > stop_time:
@@ -96,6 +96,7 @@ class Instalike():
 
     def like_photo(self, hashtag):
         driver = self.driver
+        time.sleep(2)
         driver.get(
             "https://www.instagram.com/explore/tags/" + hashtag + "/")
         time.sleep(2)
